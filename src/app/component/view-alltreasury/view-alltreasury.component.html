@@ -1,0 +1,59 @@
+
+<table class="table table-hover table-responsive" >
+    <thead>
+        <tr>
+            <th scope="col">SBI</th>
+            <th scope="col">SBI-PPF</th>
+            <th scope="col">PNB</th>
+            <th scope="col">PostOffice</th>
+            
+            <th scope="col">100 | Total</th>
+            <th scope="col">200 | Total</th>           
+            <th scope="col">500 | Total</th>
+            <th scope="col">2000 | Total</th>
+            <!-- <th scope="col">100</th>
+            <th scope="col">Total Hundread</th>
+
+            <th scope="col">Two Hundread</th>
+            <th scope="col">Total Two-Hundread</th>
+
+            <th scope="col">Five Hundread</th>
+            <th scope="col">Total Five-Hundread</th>
+
+            <th scope="col">Two Thousand</th>
+            <th scope="col">Total Two-Thousand</th> -->
+
+            <th scope="col">FD Amount</th>
+            <th scope="col">SV Amount</th>
+            <th scope="col">Total Cash</th>
+            <th scope="col">Grand Total</th>
+
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let l of list">
+            <td>₹ {{l['accounts']['SBI']}}</td>
+            <td>₹ {{l['accounts']['PPF']}}</td>
+            <td>₹ {{l['accounts']['PNB']}}</td>
+            <td>₹ {{l['accounts']['POST']}}</td>
+
+            <td>{{l['hundread']}} | ₹ {{l['totalhundread']}}</td>
+            <td>{{l['twoHundred']}} | ₹ {{l['totaltwoHundred']}}</td>
+            <td>{{l['fiveHundred']}} | ₹ {{l['totalfiveHundred']}}</td>
+            <td>{{l['twoThousand']}} | ₹ {{l['totaltwoThousand']}}</td>
+   
+
+            <td>₹ {{l['fixDeposit']}}</td>           
+            <td>₹ {{l['savingAmount']}}</td>
+            <td>₹ {{l['totalCash']}}</td>
+            <td>₹ {{l['totalAmount']}}</td>
+
+
+            <!-- <td>{{l['totalother']}}</td> -->
+            <td>{{l['insertedOn']| date: 'dd-MMM-yyy' }}</td>
+        </tr>
+
+    </tbody>
+</table>
+

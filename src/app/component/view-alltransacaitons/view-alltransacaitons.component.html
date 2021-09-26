@@ -1,0 +1,54 @@
+
+<style>
+input[type='text']{
+    background-color: beige;
+}
+.class1
+{
+    background-color: lightcoral;
+    font-weight: bolder;
+}
+.class2
+{
+    background-color:lightgreen;
+    font-weight: bolder;
+}
+
+
+</style>
+
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr>
+            <th scope="col">Inserted On</th>
+            <th scope="col">100</th>
+            <th scope="col">200</th>
+            <th scope="col">500</th>
+            <th scope="col">2000</th>
+            <th scope="col">Amount</th>
+            <!-- <th scope="col">Debit</th>
+            <th scope="col">Credit</th> -->
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Source</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let l of list;"  [ngClass]="{class1: l['credit'] == 1, class2: l['debit'] == 1}"  >
+            <td>{{l['insertedOn']| date: 'dd-MMM-yyy' }}</td>
+            <td>{{l['hundread']}}</td>
+            <td>{{l['twoHundred']}}</td>
+            <td>{{l['fiveHundred']}}</td>
+            <td>{{l['twoThousand']}}</td>
+            <td>{{l['amount']}}</td>
+            <!-- <td>{{l['debit']}}</td>
+            <td>{{l['credit']}}</td> -->
+            <td>{{l['description']}}</td>
+            <td>{{l['status']}}</td>
+            <td>{{l['source']}}</td>             
+            
+        </tr>
+
+    </tbody>
+</table>

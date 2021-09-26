@@ -1,0 +1,94 @@
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+
+            <div class="col-md-12">
+                <label class="radio-inline" for="radios-0">
+                    <input type="radio" formControlName="credit"  id="radios-0" value="1">
+                    <B style="color: red;"> Credit</B>
+                </label>
+                &nbsp;
+                <label class="radio-inline" for="radios-1">
+                    <input type="radio" formControlName="debit" id="radios-1" value="1">
+                    <B style="color: green;"> Debit</B>
+                </label>
+            </div>
+            <Br>
+            <div class="col-md-12">
+                <label class="checkbox-inline" >
+                    <input type="checkbox" formControlName="online" id="checkboxes-0" value="1">
+                    Online Transaction
+                </label>
+            </div>
+            
+            <div class="col-md-12">
+                <div class="row">
+                    <label class="col"><b>Amount</b></label>
+                    &nbsp;&nbsp;
+                    <label class="col"><b>Source</b></label>
+                </div>
+                <div class="row">
+                    <input type="text" formControlName="amount" class="form-control col">
+                    &nbsp;&nbsp;
+                    <select id="selectbasic" formControlName="source" class="form-control col">
+                        <option value="SBI">SBI</option>
+                        <option value="PNB">PNB</option>
+                        <option value="PPF">SBI-PPF</option>
+                        <option value="PO">PostOffice</option>
+                    </select>
+                </div>
+
+            </div>
+            <Br>
+            <div class="col-md-12">
+                <label class="checkbox-inline" >
+                    <input type="checkbox" formControlName="cash" id="checkboxes-1" value="1">
+                    Cash Transaction
+                </label>
+            </div>
+
+
+
+            <div class="col-md-12">
+                <div class="row">
+                    <label class="col"><b>2000   </b>
+                    <input class="col" type="number" id="quantity" formControlName="twoThousand" min="0" max="1000">
+                    </label>
+       
+                    <label class="col"><b>500  </b>
+                        <input class="col" type="number" id="quantity" formControlName="fiveHundred" min="0" max="1000">
+                    </label>
+
+
+                </div>
+            </div>
+            <Br>
+            <div class="col-md-12">
+                <div class="row">
+                    <label  class="col"><b>200  </b>&nbsp;
+                        <input class="col" type="number" id="quantity" formControlName="twoHundred" min="0" max="1000">
+                    </label>
+                    <label class="col"><b>100 </b>
+                        <input class="col" type="number" id="quantity" formControlName="hundread" min="0" max="1000">
+                    </label>  
+                </div>
+            </div>
+            <Br>
+            <div class="col-md-12"> 
+                <select id="selectbasic" formControlName="status" class="form-control col">
+                    <option selected value="Complete">Complete</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+            <Br>
+            <div class="col-md-12">
+                <textarea formControlName="description" placeholder="Description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+        </div>
+        <Br>
+        <div class="d-grid md-3">
+            <button class="btn btn-dark" type="submit">Save</button>
+        </div>
+    </form>
+</div>
