@@ -31,8 +31,8 @@ export class usersService {
         return Promise.reject(error.message || error);
     }
     
-    userprofile(){
-        return this.appconfig.geturl()+this.appconfig.getTreasuryByUserId;
+    getLatestTreasury(){
+        return this.appconfig.geturl()+this.appconfig.getLatestTreasury;
     }
 
 }

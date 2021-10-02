@@ -16,6 +16,8 @@ import { treasuryService } from './service/treasuryService';
 import { transactionService } from './service/transactionService';
 import { newTransactionService } from './service/newTransactionService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [AppConfig,usersService,treasuryService,transactionService,newTransactionService],
   bootstrap: [AppComponent]

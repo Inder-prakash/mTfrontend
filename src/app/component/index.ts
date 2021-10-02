@@ -13,7 +13,7 @@ export class index implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-    this.us.getService(this.us.userprofile()).then(result => {
+    this.us.getService(this.us.getLatestTreasury()).then(result => {
       if (result) {
         this.spinner.hide();
       }  

@@ -8,8 +8,12 @@ export class AppConfig {
     return base;
   }
 
-  public getTreasuryByUserId = "getTreasuryByUserId?userId=614efaaf24dca67636d065a6";
-  public getTransactionByUserId = "getTransactionByUserId?userId=614efaaf24dca67636d065a6";
+  public getTreasuryByUserId = "getTreasuryByUserId?userId=6151b1cfa4b6987211bf98a6";
+  public getTransactionByUserId = "getTransactionByUserId?userId=6151b1cfa4b6987211bf98a6";
   public newTransaction = "newTransaction";
   public activate = "";
+  public getLatestTreasury = "getLatestTreasury?userId=6151b1cfa4b6987211bf98a6";
 }
+
+
+

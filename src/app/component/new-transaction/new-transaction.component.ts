@@ -25,8 +25,8 @@ export class NewTransactionComponent implements OnInit {
     this.myForm.get('online')?.valueChanges.subscribe(v => {
       if (v) {
         this.myForm.get('cash')?.reset();
-         this.myForm.get('source')?.enable();
-         this.myForm.get('amount')?.enable();      
+        this.myForm.get('source')?.enable();
+        this.myForm.get('amount')?.enable();
       } else {
          this.myForm.get('source')?.disable();
          this.myForm.get('amount')?.disable();
@@ -51,6 +51,7 @@ export class NewTransactionComponent implements OnInit {
     this.myForm.get('credit')?.valueChanges.subscribe(v => {
       if (v) {
         this.myForm.get('debit')?.reset();
+        this.myForm.get('debit')?.setValue(0);
       }
     });
 
@@ -58,6 +59,7 @@ export class NewTransactionComponent implements OnInit {
     this.myForm.get('debit')?.valueChanges.subscribe(v => {
       if (v) {
         this.myForm.get('credit')?.reset();
+        this.myForm.get('credit')?.setValue(0);
       }
     });
 
@@ -67,6 +69,7 @@ export class NewTransactionComponent implements OnInit {
 
 
   onSubmit() {
+    this.spinner.show();
     if (this.myForm.value.credit != "" || this.myForm.value.debit != "") {
       if (this.myForm.value.online > 0 || this.myForm.value.cash > 0) {
         if (this.myForm.value.status != "" && this.myForm.value.description != "") {
@@ -81,11 +84,10 @@ export class NewTransactionComponent implements OnInit {
             "status": this.myForm.value.status,
             "twoHundred": this.myForm.value.twoHundred,
             "twoThousand": this.myForm.value.twoThousand,
-            "userId": "614efaaf24dca67636d065a6",
+            "userId": "6151b1cfa4b6987211bf98a6",
             "other":0
           };
-          this.ns.postService(this.ns.newTransaction(), data).then(res => {
-            this.spinner.show();
+          this.ns.postService(this.ns.newTransaction(), data).then(res => { 
             if (res) {
               this.myForm.reset();
               this.spinner.hide();
@@ -108,7 +110,6 @@ export class NewTransactionComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    
     this.myForm.get('source')?.disable();
     this.myForm.get('amount')?.disable();
     this.myForm.get('fiveHundred')?.disable();
